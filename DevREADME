@@ -1,0 +1,20 @@
+
+# gitbub 
+ local >> github / git  >> 개발 실서버 전달 ..
+  github.com  >> sourcetree 로 개발 ..
+  
+# bootstrap html developement
+ bootstrap start html add
+ bootstrap css lib add
+   https://mvnrepository.com/  
+ jquery javascript lib add
+ index.html >> navigation bar add
+ member page dev
+ 
+# local setting
+sprint boot project
+  wewb / mustache /dev-tools  adding
+  index.html >> src/main/resources
+  live reload chrome extension install
+  Boot Dashboard >> web server .. localhost:8080
+  
