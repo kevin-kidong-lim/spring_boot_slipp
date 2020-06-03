@@ -27,38 +27,45 @@
         <a class="nav-link" href="/form.html">Member</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="/form.html">list</a>
+        <a class="nav-link" href="/list">list</a>
       </li>
     </ul>
 </nav>
 
 <div class="container">
 <h1>Create Member !!!33!!</h1>
-<form>
+<form action="/create" method="post">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">ID</label>
-      <input type="text" class="form-control" id="userId" placeholder="User ID">
+      <input type="text" class="form-control" name="userId" id="userId" placeholder="User ID">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="password" placeholder="Password">
+      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
     </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Name</label>
+      <input type="text" class="form-control" name="name" id="name"  placeholder="User Name">
+    </div>
+   
   </div>
  <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="email"  placeholder="User Email">
+      <input type="email" class="form-control" name="email" id="email"  placeholder="User Email">
     </div>
    
   </div>
   <div class="form-group">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="address" placeholder="1234 Main St">
+    <input type="text" class="form-control"name="address"  id="address" placeholder="1234 Main St">
   </div>
   <div class="form-group">
     <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="address2" placeholder="Apartment, studio, or floor">
+    <input type="text" class="form-control" name="address2" id="address2" placeholder="Apartment, studio, or floor">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
