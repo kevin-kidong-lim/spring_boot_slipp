@@ -1,13 +1,12 @@
 package net.slipp.web;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.slipp.domain.User;
@@ -33,11 +32,25 @@ public class UserController {
 		return "/user/list";
 	}
 	
-	@GetMapping("/update")
-	public String update(User user) {
-		System.out.println("aa userId" + user);
+	@GetMapping("/form")
+	public String form() {
+		return "/user/form";
+	}
+	
+	@GetMapping("/{id}/form")
+	public String updateForm(@PathVariable Long id, Model model) {
+		User user = userRepository.findById(id).orElse(new User());
+		model.addAttribute("user",user);
+		System.out.println("updateForm user : " +  id);
+		System.out.println("updateForm user : " +  user);
+		return "/user/updateForm";
+	}
+	
+	@PostMapping("/{id}")
+	public String update(@PathVariable Long id, User updateUser) {
+		User user =  userRepository.findById(id).orElse(new User());
+		user.update(updateUser);
 		userRepository.save(user);
 		return "redirect:/users";
 	}
-	
 }

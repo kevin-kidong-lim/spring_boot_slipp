@@ -33,6 +33,13 @@ public class User {
 	public String toString() {
 		return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + "]";
 	}
+	public void update(User updateUser) {
+		// TODO Auto-generated method stub
+		this.password = updateUser.password;
+		this.name = updateUser.name;
+		this.email = updateUser.email;
+		
+	}
 	
 	
 }
