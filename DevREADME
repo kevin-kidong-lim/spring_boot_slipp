@@ -46,7 +46,17 @@
 	  live reload chrome extension install
 	  Boot Dashboard >> web server .. localhost:8080
 	  
-  
+	   현업에서는 jsp, freemarker, thymleaf와 같은 템플릿 엔진을 사용하거나, 
+	   최근에는 백엔드에서 html 응답이 아닌 json과 같은 응답을 주는 방향으로 발전하고 있는 추세입니다
+   
  https://www.youtube.com/user/javajigi
  https://www.youtube.com/watch?v=JUKehW-c484&list=PLqaSEyuwXkSppQAjwjXZgKkjWbFoUdNXC
+ 
+ 단축키
+ 커맨드+Alt+ 화살표 : 줄 이동
+ 컨트롤 +쉬프트 + o : 자동 import
+ 컨트롤 + 쉬프트 + f : 포멧 
+ 컨트롤 + 쉬프트 + T : 찾기 
+ 
+ 
  
