@@ -1,50 +1,51 @@
 # H2, 
 
-H2 실행 하기 ..
-https://atoz-develop.tistory.com/entry/H2-Database-%EC%84%A4%EC%B9%98-%EC%84%9C%EB%B2%84-%EC%8B%A4%ED%96%89-%EC%A0%91%EC%86%8D-%EB%B0%A9%EB%B2%95
-C:\Program Files (x86)\H2\bin\ 실행.
-
-google bootstrap3 free template
+	H2 실행 하기 ..
+	https://atoz-develop.tistory.com/entry/H2-Database-%EC%84%A4%EC%B9%98-%EC%84%9C%EB%B2%84-%EC%8B%A4%ED%96%89-%EC%A0%91%EC%86%8D-%EB%B0%A9%EB%B2%95
+	C:\Program Files (x86)\H2\bin\ 실행.
+	
+	google bootstrap3 free template
 
 #
-controller , mustache templet engine
-member create
-list
-git commit
+	controller , mustache templet engine
+	member create
+	list
+	git commit
 
-컨트록 + 쉬프트 + O  : 임포트 자동 
- application.properties파일에 spring.mustache.suffix: .html 추가 
+	컨트록 + 쉬프트 + O  : 임포트 자동 
+	 application.properties파일에 spring.mustache.suffix: .html 추가 
 
 # 원격 서버 배포 
-git 설치후..
-git clone https://github.com/kdin....git
-cd myslipt
-./mvnw clean package  >>>  project build..
-cd target/
-java -jar my-slip-1.0.jar   >>> server start  localhost:8080
-
-ssh -i myjwp.pem ubuntu@awsip
+	git 설치후..
+	git clone https://github.com/kdin....git
+	cd myslipt
+	./mvnw clean package  >>>  project build..jar 파일 생성됨.
+	cd target/
+	java -jar my-slip-1.0.jar   >>> server start  localhost:8080
+	./mvnw spring-boot:run &  >> server start not jar 파일 .. jar 압축안하고 바로 실행됨 .
+	
+	ssh -i myjwp.pem ubuntu@awsip
 
 
 # gitbub 
- local >> github / git  >> 개발 실서버 전달 ..
-  github.com  >> sourcetree 로 개발 ..
+	 local >> github / git  >> 개발 실서버 전달 ..
+	  github.com  >> sourcetree 로 개발 ..
   
 # bootstrap html developement
- bootstrap start html add
- bootstrap css lib add
-   https://mvnrepository.com/  
- jquery javascript lib add
- index.html >> navigation bar add
- member page dev
- 
+	 bootstrap start html add
+	 bootstrap css lib add
+	   https://mvnrepository.com/  
+	 jquery javascript lib add
+	 index.html >> navigation bar add
+	 member page dev
+	 
 # local setting
-sprint boot project
-  wewb / mustache /dev-tools  adding
-  index.html >> src/main/resources
-  live reload chrome extension install
-  Boot Dashboard >> web server .. localhost:8080
-  
+	sprint boot project
+	  wewb / mustache /dev-tools  adding
+	  index.html >> src/main/resources
+	  live reload chrome extension install
+	  Boot Dashboard >> web server .. localhost:8080
+	  
   
  https://www.youtube.com/user/javajigi
  https://www.youtube.com/watch?v=JUKehW-c484&list=PLqaSEyuwXkSppQAjwjXZgKkjWbFoUdNXC
