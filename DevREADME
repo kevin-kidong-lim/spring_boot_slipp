@@ -21,7 +21,9 @@
 	cd myslipt
 	./mvnw clean package  >>>  project build..jar 파일 생성됨.
 	cd target/
-	java -jar my-slip-1.0.jar   >>> server start  localhost:8080
+	java -jar my-slip-1.0.jar   >>> 모바일 배포 server start  localhost:8080
+	@@ 별도의 톰켓서버 설치 후  웹페이지 등은 ..war 파일 배포
+		https://www.youtube.com/watch?v=_GkOmt_3hjM&list=PLqaSEyuwXkSppQAjwjXZgKkjWbFoUdNXC&index=29
 	./mvnw spring-boot:run &  >> server start not jar 파일 .. jar 압축안하고 바로 실행됨 .
 	
 	ssh -i myjwp.pem ubuntu@awsip
