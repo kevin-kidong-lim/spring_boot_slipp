@@ -37,13 +37,13 @@ public class UserController {
 			return "redirect:/users/loginForm";
 		}
 
-		session.setAttribute("user",  user);
+		session.setAttribute("sessionedUser",  user);
 		return "redirect:/";
 	}
 	
 	@GetMapping("/logout")
 	public String logout( HttpSession session) {
-		session.removeAttribute("user");
+		session.removeAttribute("sessionedUser");
 		return "redirect:/";
 	}
 	
@@ -65,7 +65,15 @@ public class UserController {
 	}
 	
 	@GetMapping("/{id}/form")
-	public String updateForm(@PathVariable Long id, Model model) {
+	public String updateForm(@PathVariable Long id, Model model,HttpSession session) {
+		User sessionedUser = (User)session.getAttribute("sessionedUser");
+		if (sessionedUser == null ) {
+			return "redirect:/users/loginForm";
+		}
+		if ( !id.equals(sessionedUser.getId())) {
+			throw new IllegalStateException("Not matched user");
+		}
+			
 		User user = userRepository.findById(id).orElse(new User());
 		model.addAttribute("user",user);
 		System.out.println("updateForm user : " +  id);
@@ -74,7 +82,15 @@ public class UserController {
 	}
 	
 	@PostMapping("/{id}")
-	public String update(@PathVariable Long id, User updateUser) {
+	public String update(@PathVariable Long id, User updateUser,HttpSession session) {
+		User sessionedUser = (User)session.getAttribute("sessionedUser");
+		if (sessionedUser == null ) {
+			return "redirect:/users/loginForm";
+		}
+		if ( !id.equals(sessionedUser.getId())) {
+			throw new IllegalStateException("Not matched user");
+		}
+		
 		User user =  userRepository.findById(id).orElse(new User());
 		user.update(updateUser);
 		userRepository.save(user);
