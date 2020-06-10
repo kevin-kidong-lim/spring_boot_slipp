@@ -1,6 +1,7 @@
 package net.slipp.domain;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
@@ -39,6 +40,29 @@ public class Answer {
 		this.createDate = LocalDateTime.now();
 		
 	}
+	
+	public Long getId() {
+		return id;
+	}
+	public User getWriter() {
+		return writer;
+	}
+	public Question getQuestion() {
+		return question;
+	}
+	public String getContents() {
+		return contents;
+	}
+	public LocalDateTime getCreateDate() {
+		return createDate;
+	}
+	public String getFormattedCreateDate() {
+		if ( createDate == null) {
+			return "";
+		}
+		return createDate.format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
