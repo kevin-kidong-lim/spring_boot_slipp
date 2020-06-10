@@ -1,3 +1,7 @@
+
+
+Spring-Boot, JPA로 질문/답변 게시판 구현 과정
+
 # H2, 
 
 	H2 실행 하기 ..
@@ -53,6 +57,8 @@
    
  https://www.youtube.com/user/javajigi
  https://www.youtube.com/watch?v=JUKehW-c484&list=PLqaSEyuwXkSppQAjwjXZgKkjWbFoUdNXC
+ 
+ api 문서 생성 , 스웨거 swagger.
  
  단축키
  커맨드+Alt+ 화살표 : 줄 이동

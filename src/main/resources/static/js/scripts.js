@@ -1,13 +1,13 @@
-//String.prototype.format = function() {
-//  var args = arguments;
-//  return this.replace(/{(\d+)}/g, function(match, number) {
-//    return typeof args[number] != 'undefined'
-//        ? args[number]
-//        : match
-//        ;
-//  });
-//};
-//
+String.prototype.format = function() {
+  var args = arguments;
+  return this.replace(/{(\d+)}/g, function(match, number) {
+    return typeof args[number] != 'undefined'
+        ? args[number]
+        : match
+        ;
+  });
+};
+
 //$(document).ready(function(){
 //	$('#btnToggle').click(function(){
 //		if($(this).hasClass('on')){
@@ -19,6 +19,33 @@
 //		}
 //	});
 //});
+
+$("a.link-delete-article").click(deleteAnswer);
+
+function deleteAnswer(e){
+	e.preventDefault(); // 서버 전송을 막음.
+	console.log('clck deleteAnswer');
+	me = $(this);
+	var url = me.attr("href");
+	console.log('url', url)
+	$.ajax({
+		type : 'get',
+		url : url,
+		dataType : 'json',
+		error: function(xhr, status){
+			console.log('error', error)
+		},
+		success : function(data, status){
+			console.log('error', data);
+			if (data.valid){
+				me.closest("article").remove();
+			}else{
+				alert(data.errorMessage);
+			}
+		}
+	});
+}
+
 $(".answer-write input[type=submit]").click(addAnswer);
 
 function addAnswer(e){
@@ -44,4 +71,28 @@ function onError(){
 }
 function onSuccess(data, status){
 	console.log('data', data)
+	var answerTemplate = $("#answerTemplate").html();
+	var template = answerTemplate.format(data.writer.userId, data.formattedCreateDate, data.contents, data.question.id , data.id);
+//	$(".qna-comment-slipp-articles").append(template)
+	$(".qna-comment-slipp-articles").prepend(template)
+	$(".answer-write textarea").val("");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

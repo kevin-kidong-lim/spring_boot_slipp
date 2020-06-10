@@ -5,16 +5,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
-public class User {
-	@Id
-	@GeneratedValue // auto sequence
-	private Long id;
-	@Column(nullable = false, length = 20, unique = true)
-	private String userId;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+@Entity
+public class User extends AbstractEntity {
+
+	@Column(nullable = false, length = 20, unique = true)
+	@JsonProperty
+	private String userId;
+	@JsonIgnore
 	private String password;
+	@JsonProperty
 	private String name;
+	@JsonProperty
 	private String email;
 
 	public void setUserId(String userId) {
@@ -53,12 +57,16 @@ public class User {
 
 	}
 
+
 	public boolean matchId(Long newId) {
 		if (newId == null) {
 			return false;
 		}
-		return newId.equals(id);
+		return newId.equals(getId());
 	}
+	
+	
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -71,29 +79,5 @@ public class User {
 		return email;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
 
 }
